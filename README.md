@@ -16,8 +16,8 @@ Pre-requisites:
 ## Data File
 
 1. The txt data file is located under src/ folder as data.txt.
-2. To change the data there are 2 ways:
-    a) Just overrite the actual file.
-    b) Add a new file to the folder and change src/navigate.js file in line number 3.
+2. To change the data there are 2 ways:<br>
+    a) Just overrite the actual file.<br>
+    b) Add a new file to the folder and change src/navigate.js file in line number 3.<br>
        const archivo = "src/data.txt"  <-- replace data.txt with the new added file
 
