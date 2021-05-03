@@ -12,7 +12,8 @@ app.set('views', __dirname);
 
 app.get('/', function(req, res){
   archivo = navigate.archivo
-  res.render('views/index',{file: archivo});
+  end_pos = navigate.end_pos
+  res.render('views/index',{file: archivo, end_pos: end_pos});
 });
 
 app.listen(3000, () => console.log('Example app listening on port http://localhost:3000'))

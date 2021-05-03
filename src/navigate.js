@@ -1,6 +1,7 @@
 const fs = require('fs')
 const readline = require('readline')
 const archivo = "src/data.txt"
+let end_pos = ""
 
 const readInterface = readline.createInterface({
     input: fs.createReadStream(archivo).on("error", err => console.log(err)),
@@ -15,12 +16,12 @@ const readInterface = readline.createInterface({
         nline++
     });
     
+    
 
 const navigate = {}
 
     navigate.move = (line, nline) => {
         const dir = ["N","E","S","W"]
-        console.log(nline)
         if(nline==0){
             // validate 2 length and being numbers else return with error
             xmax = line.split(" ")[0]; ymax = line.split(" ")[1];
@@ -28,10 +29,16 @@ const navigate = {}
         }
         if (nline>0 && nline%2==1){
             // validate 3 length and being 2 numbers 1 string in dir array
-            xpos = parseInt(line.split(" ")[0]); ypos = parseInt(line.split(" ")[1]); dirini = line.split(" ")[2]; dirindex = dir.indexOf(dirini)
+            xpos = parseInt(line.split(" ")[0]); 
+            ypos = parseInt(line.split(" ")[1]); 
+            dirini = line.split(" ")[2];
+            dir_rob = dirini;
+            dirindex = dir.indexOf(dirini)
+            console.log("INI POS: " + xpos + " " + ypos + " " + dirini)
         }
         if (nline>0 && nline%2==0){
             // validate if all elements are in moves array
+            
             mov = line.split("");
             for (var v=0;v<mov.length;v++){
                 if(mov[v]=="L"){
@@ -58,12 +65,14 @@ const navigate = {}
                         if(xpos>0){xpos = xpos - 1;}else{console.log("ERROR: Out of bondary")}
                     }
                 }
+                
             }
-
-           console.log("RESPONSE:")
-           console.log(xpos+" "+ypos+" "+dir_rob)
+            end_pos = end_pos + xpos + " " + ypos + " " + dir_rob+"<br>"
+            module.exports.end_pos = end_pos
+            console.log("END POS:" + xpos+" "+ypos+" "+dir_rob)
         }
     }
 
 module.exports = navigate
 module.exports.archivo = archivo
+
