@@ -34,7 +34,7 @@ navigate.move = (line, nline) => {
         dirini = line.split(" ")[2];
         dir_rob = dirini;
         dirindex = dir.indexOf(dirini)
-        console.log("INI POS: " + xpos + " " + ypos + " " + dirini)
+        //console.log("INI POS: " + xpos + " " + ypos + " " + dirini)
     }
     if (nline>0 && nline%2==0){
         // validate if all elements are in moves array
@@ -68,7 +68,7 @@ navigate.move = (line, nline) => {
         }
         end_pos = end_pos + xpos + " " + ypos + " " + dir_rob+"<br>"
         module.exports.end_pos = end_pos
-        console.log("END POS:" + xpos+" "+ypos+" "+dir_rob)
+        console.log(xpos+" "+ypos+" "+dir_rob)
     }
 }
 
