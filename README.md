@@ -11,7 +11,7 @@ Pre-requisites:
 2. Inside the new created folder run git clone https://github.com/FIXDISC/Themis.git
 3. Navigate into Themis folder.
 4. In a terminal run: npm i
-5. Run: npm start <br>&nbsp;
+5. Run: npm start &nbsp;
 
 ![Terminal](img/terminal.png)
 
